@@ -1,0 +1,234 @@
+.precios {
+    gap: 5rem;
+    padding-top: 3.2rem;
+}
+
+.prices {
+    gap: 2rem;
+    width: 100%;
+}
+
+.prices>div {
+    padding: 4rem;
+}
+
+.price {
+    gap: 2rem;
+    border-radius: 1.6rem;
+    height: fit-content;
+    position: relative;
+    max-width: 38.7rem;
+    width: 38.7rem;
+    box-sizing: border-box;
+}
+
+.price-plan {
+    gap: 1rem;
+}
+
+.price-plan p {
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    color: var(--y-text-tertiary);
+}
+
+.price-plan span {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.018rem;
+    padding: 0.35rem 0.75rem;
+    border: 1.5px solid;
+    border-radius: 0.5rem;
+}
+
+.price-price {
+    align-items: flex-end;
+}
+
+.price-price p,
+.price-price p span {
+    line-height: 3.6rem !important;
+    font-weight: 700 !important;
+    color: var(--y-text-tertiary);
+    font-size: 3rem !important;
+    letter-spacing: 0.1rem !important;
+}
+
+.price-price span {
+    font-weight: 500;
+    color: var(--y-text-placeholder20) !important;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    padding-bottom: 0.3rem;
+    margin-left: 1rem;
+}
+
+.price-plan-h {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+}
+
+.price-plan-h>p {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+}
+
+.price ul {
+    gap: 1rem;
+}
+
+.price ul li {
+    padding: 0.35rem 0;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    font-weight: 500;
+    padding-left: 2.6rem;
+    color: var(--y-text-tertiary);
+    position: relative;
+}
+
+.price ul li:after {
+    content: url('../icons/Check.svg');
+    position: absolute;
+    left: 0;
+}
+
+.price button {
+    padding: 1.7rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+    width: calc(100% - 2rem);
+    margin-top: 2rem;
+    position: relative;
+    transition: all 300ms;
+}
+
+.recomended-plan {
+    padding: 0.8rem 1rem;
+    border-radius: 2.2rem;
+    background-color: var(--y-primaries-brand-blue);
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recomended-plan p {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: var(--y-text-inverse);
+}
+
+.blue {
+    border: 2px solid var(--y-border-brand);
+    /* background-color: #0051FF; */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.04), 0px 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+
+.blue .price-plan-h {
+    background: rgba(0, 81, 255, 0.1);
+}
+
+.blue .price-plan-h>p {
+    color: var(--y-primaries-brand-blue);
+}
+
+.blue .price-plan span {
+    border-color: var(--y-text-inverse);
+    color: var(--y-text-inverse);
+}
+
+.blue .price-price {
+    color: var(--y-text-inverse);
+}
+
+.blue .price-price p {
+    color: var(--y-primaries-brand-blue);
+}
+
+.blue .price-price p span {
+    color: var(--y-primaries-brand-blue) !important;
+}
+
+.blue .price-price span {
+    /* color: var(--dark-100); */
+    text-decoration: unset;
+}
+
+.blue button {
+    background: var(--y-btn-primary-bg);
+    box-shadow: 0px 4px 8px 3px rgba(0, 82, 255, 0.25);
+    color: var(--y-text-inverse);
+    border: 1px solid var(--y-border-brand);
+}
+
+.blue button::after {
+    border-radius: 1rem;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(54, 178, 250, 0.1);
+    transition: all 600ms;
+}
+
+.blue button:hover::after {
+    width: 100%;
+}
+
+.blue ul li:after {
+    filter: invert(16%) sepia(79%) saturate(5095%) hue-rotate(224deg) brightness(105%) contrast(104%);
+}
+
+.orange {
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.orange .price-plan-h {
+    background: rgba(251, 134, 0, 0.1);
+}
+
+.orange .price-plan-h>p {
+    color: var(--y-primaries-orange);
+}
+
+.orange button {
+    background-color: var(--y-primaries-orange);
+    box-shadow: 0px 4px 8px 3px rgba(251, 134, 0, 0.25);
+    color: var(--y-text-inverse);
+    border: 1px solid var(--y-primaries-orange);
+}
+
+.orange button::after {
+    border-radius: 1rem;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 600ms;
+}
+
+.orange button:hover::after {
+    width: 100%;
+}
+
+.orange ul li:after {
+    filter: invert(64%) sepia(69%) saturate(3295%) hue-rotate(358deg) brightness(95%) contrast(108%);
+}

@@ -14,19 +14,19 @@ const main = async () => {
     /**
      * Create HTTP server.
      */
-    const options = {
-        key: fs.readFileSync(path.join(__dirname, 'certificate', 'PRIVATEKEY.key'), 'utf8'),
-        cert: fs.readFileSync(path.join(__dirname, 'certificate', 'f582836a1a1a5825.crt'), 'utf8'),
-        ca: [
-            fs.readFileSync(path.join(__dirname, 'certificate', 'gd_bundle-g2-g1.crt'), 'utf8')
-        ],
-        passphrase:'Jessy487$'
-    };
-    const server = https.createServer(options, app);
+    // const options = {
+    //     key: fs.readFileSync(path.join(__dirname, 'certificate', 'PRIVATEKEY.key'), 'utf8'),
+    //     cert: fs.readFileSync(path.join(__dirname, 'certificate', 'f582836a1a1a5825.crt'), 'utf8'),
+    //     ca: [
+    //         fs.readFileSync(path.join(__dirname, 'certificate', 'gd_bundle-g2-g1.crt'), 'utf8')
+    //     ],
+    //     passphrase:'Jessy487$'
+    // };
+    // const server = https.createServer(options, app);
 
-    await server.listen(app.get("https_port"), () => {
-        console.log('Https server listening on port ' + app.get('https_port'));
-    });
+    // await server.listen(app.get("https_port"), () => {
+    //     console.log('Https server listening on port ' + app.get('https_port'));
+    // });
 
     await app.listen(app.get("port"));
     console.log("Server listening on port " + app.get("port"));

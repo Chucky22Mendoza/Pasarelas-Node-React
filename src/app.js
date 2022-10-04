@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => {
     res.send("testttttttinnnng");
-}
+});
 
 // settings
 app.set("port", process.env.PORT || 4000);

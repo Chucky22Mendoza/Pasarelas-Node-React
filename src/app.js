@@ -40,7 +40,7 @@ app.get("/test", (req, res) => {
 
 // settings
 app.set("port", process.env.PORT || 4000);
-app.set("https_port", process.env.HTTPS_PORT || 443);
+app.set("https_port", process.env.HTTPS_PORT || 444);
 
 /**
  * Módulo inicializador de aplicación

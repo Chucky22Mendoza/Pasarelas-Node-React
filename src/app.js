@@ -4,7 +4,6 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const path = require('path');
-const fs = require('fs');
 
 //webpack
 const webpack = require('webpack');
@@ -37,6 +36,7 @@ app.get("/", (req, res) => {
 
 // settings
 app.set("port", process.env.PORT || 4000);
+app.set("https_port", process.env.HTTPS_PORT || 443);
 
 /**
  * Módulo inicializador de aplicación

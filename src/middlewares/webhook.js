@@ -15,6 +15,7 @@ const express = require('express');
  */
 module.exports = (req, res, next) => {
     if (req.originalUrl === '/webhook') {
+        console.log("Is the --> webhook");
         next(); // Do nothing with the body because I need it in a raw state.
     } else {
         express.json()(req, res, next);  // ONLY do express.json() if the received request is NOT a WebHook from Stripe.

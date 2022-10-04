@@ -19,10 +19,18 @@ require("dotenv").config();
 app.use(webpackDev(webpack(config)));
 app.use(morgan("dev"));
 app.use(cors());
-app.use(express.urlencoded({extended: false}));
 // app.use(express.json()); before stripe
 // Use JSON parser for all non-webhook routes
-app.use(require("./middlewares/webhook"));
+// app.use(require("./middlewares/webhook"));
+
+app.use((req, res, next) => {
+    if (req.originalUrl === '/webhook') {
+        next();
+    } else {
+        express.urlencoded({extended: false})(req, res, next);
+        express.json()(req, res, next);
+    }
+});
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));

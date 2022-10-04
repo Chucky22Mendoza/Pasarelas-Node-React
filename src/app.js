@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     if (req.originalUrl === '/webhook') {
         next();
     } else {
-        express.urlencoded({extended: false})(req, res, next);
+        express.urlencoded({extended: false});
         express.json()(req, res, next);
     }
 });

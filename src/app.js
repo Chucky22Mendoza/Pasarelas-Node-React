@@ -34,6 +34,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+app.get("/test", (req, res) => {
+    res.send("testttttttinnnng");
+}
+
 // settings
 app.set("port", process.env.PORT || 4000);
 app.set("https_port", process.env.HTTPS_PORT || 443);

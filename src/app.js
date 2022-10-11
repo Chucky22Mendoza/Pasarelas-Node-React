@@ -19,9 +19,6 @@ require("dotenv").config();
 app.use(webpackDev(webpack(config)));
 app.use(morgan("dev"));
 app.use(cors());
-// app.use(express.json()); before stripe
-// Use JSON parser for all non-webhook routes
-// app.use(require("./middlewares/webhook"));
 
 app.use((req, res, next) => {
     if (req.originalUrl === '/webhook') {
@@ -40,10 +37,12 @@ app.use("/", require("./routes/stripe.routes"));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+app.get("/subscription/:bussinessId/:mail/:page", (req, res) => {
+    res.redirect("/");
+});
 
 // settings
 app.set("port", process.env.PORT || 4000);
-// app.set("https_port", process.env.HTTPS_PORT || 443);
 
 /**
  * Módulo inicializador de aplicación

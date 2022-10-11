@@ -1,11 +1,19 @@
 import React from 'react';
 
 const header = (props) => {
+    const logout = () => {
+        sessionStorage.setItem('bussinessId', null);
+        sessionStorage.setItem('mail', null);
+        sessionStorage.setItem('urlBack', null);
+        sessionStorage.clear();
+        window.location.href = "/";
+    }
+
     return (
         <section id="header">
             <div className="header-flex">
                 <div>
-                    <a href={props.queryParams.urlBack}>
+                    <a onClick={logout}>
                         <img src="/img/back.svg" alt=""/>
                     </a>
                 </div>
@@ -16,7 +24,7 @@ const header = (props) => {
             </div>
             <div>
                 <h3>{props.queryParams.mail}</h3>
-                <a href={props.queryParams.urlBack}>Cerrar sesión</a>
+                <a onClick={logout}>Cerrar sesión</a>
             </div>
         </section>
     );

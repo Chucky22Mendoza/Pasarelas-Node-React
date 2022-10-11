@@ -1,5 +1,5 @@
 .precios {
-    gap: 5rem;
+    gap: 4rem;
     padding-top: 3.2rem;
 }
 
@@ -231,4 +231,30 @@
 
 .orange ul li:after {
     filter: invert(64%) sepia(69%) saturate(3295%) hue-rotate(358deg) brightness(95%) contrast(108%);
+}
+
+.banner {
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.banner .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.banner span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: var(--y-scales-gray-70);
 }

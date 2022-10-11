@@ -1,0 +1,489 @@
+#feature-comparision {
+    margin: 0 auto;
+    max-width: 110rem;
+    width: 110rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.text {
+    color: var(--y-text-primary);
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 150%;
+}
+
+#planes {
+    background-color: var(--y-bg-light);
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0rem;
+    border-bottom: 0.1rem solid var(--y-bg-disabled-bg);
+}
+
+#planes-mvl {
+    background-color: var(--y-bg-light);
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0rem;
+    border-bottom: 0.1rem solid var(--y-bg-disabled-bg);
+}
+
+#planes-200px {
+    background-color: var(--y-bg-light);
+    position: sticky;
+    top: 0;
+    display: none;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0rem;
+    border-bottom: 0.1rem solid var(--y-bg-disabled-bg);
+}
+
+.plan {
+    width: 54%;
+    gap: 5.0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+}
+
+.type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0rem;
+    gap: 0.5rem;
+    font-weight: 500;
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+}
+
+.feature1 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 0rem;
+    gap: 0.6rem;
+        font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 2rem;
+}
+
+.mns {
+    text-align: left;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+}
+
+.feature2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1rem 1.6rem;
+    gap: 1.2rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+}
+
+.btn {
+    background-color: var(--y-btn-secondary-bg);
+    color: var(--y-btn-secondary-text);
+    border-radius: 0.6rem;
+}
+.premium{
+    background-color: var(--y-primaries-orange);
+    color: var(--y-bg-light);
+}
+    
+
+.plus{
+    background-color: var(--y-bg-brand);
+    color: var(--y-bg-light);
+}
+
+
+.funcionalidades {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.0rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0rem 1rem 1rem;
+    gap: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: var(--title);
+
+}
+
+.gray {
+    background-color: var(--y-bg-primary);
+}
+
+.sec {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.0rem;
+}
+
+.prods {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 94%;
+}
+
+.check {
+    width: 54%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tr {
+    width: 32%;
+}
+
+.nums {
+    color: var(--y-primaries-brand-blue);
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 1.4rem;
+}
+
+.inv {
+    color: var(--y-bg-light);
+}
+
+.inv-gray {
+    color: var(--y-bg-primary);
+}
+
+.pr {
+    color: var(--y-primaries-orange);
+}
+
+.apart {
+    display: flex;
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+    width: 20.1rem;
+    background-color: var(--y-bg-light);
+    position:sticky;
+    top: 2%;    
+    padding: 0.1rem 1rem 0rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.sobretxt {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.sp {
+    height: 3.9rem;
+}
+
+.nuevo {
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0.6rem 0.3rem;
+    gap: 0.4rem;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: var(--y-bg-light);
+    background-color: var(--y-bg-brand);
+}
+
+#dinero {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    color: var(--y-text-primary)
+}
+
+#mns {
+    justify-content: left;
+    line-height: 1.6rem;
+    color: var(--y-text-primary);
+    width: 12rem;
+}
+
+.txt {
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.bl {
+    color: var(--y-text-primary);
+}
+
+.sp {
+    justify-content: center;
+}
+
+.btn-comparative {
+    position: relative;
+    transition: all 300ms;
+    cursor: pointer;
+    border-radius: 0.6rem;
+}
+
+.btn-comparative.blue-btn {
+    background-color: var(--y-btn-primary-bg);
+    box-shadow: 0 .4rem .8rem .3rem rgb(0 82 255 / 25%);
+    color: var(--y-text-inverse);
+    border: .1rem solid var(--y-border-brand);
+}
+
+.btn-comparative.blue-btn::after {
+    border-radius: 1rem;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(54, 178, 250, 0.1);
+    transition: all 600ms;
+}
+
+.btn-comparative.blue-btn:hover::after {
+    width: 100%;
+}
+
+.btn-comparative.orange-btn {
+    background-color: var(--y-primaries-orange);
+    box-shadow: 0 .4rem .8rem .3rem rgb(251 134 0 / 25%);
+    color: var(--y-text-inverse);
+    border: .1rem solid var(--y-primaries-orange);
+}
+
+.btn-comparative.orange-btn::after {
+    border-radius: 1rem;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 600ms;
+}
+
+.btn-comparative.orange-btn:hover::after {
+    width: 100%;
+}
+
+/* media quyres */
+
+@media screen and (max-width:1090px) {
+    #planes {
+        display: none;
+    }
+
+    #planes-mvl {
+        display: flex;
+    }
+}
+
+@media screen and (min-width:1090px) {
+    #planes-mvl {
+        display: none;
+    }
+
+    #planes {
+        display: flex;
+    }
+}
+
+@media screen and (max-width:1090px) {
+    #btn-free {
+        font-size: 1.1rem;
+    }
+
+    #btn-pl {
+        font-size: 1.1rem;
+    }
+
+    #btn-pr {
+        font-size: 1.1rem;
+    }
+
+    .mns {
+        font-size: 0.9rem;
+    }
+
+    .feature1 {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:719px) {
+    .sobretxt {
+        font-size: 1.0rem;
+    }
+
+    .list {
+        padding: .5rem 0rem .5rem 1rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:715px) {
+    #planes-mvl {
+        gap: 0%;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .nums {
+        font-size: 1.2rem;
+    }
+
+    .center {
+        height: 1.56rem;
+    }
+
+    .type{
+        justify-content: center;
+    }
+    
+    .apart {
+        padding: 0.1rem 1rem 0rem;
+        width: 14.4rem;
+        font-size: 2.0rem;
+    }
+
+    .prods>img {
+        display: none;
+    }
+
+    .txt>img {
+        display: none;
+    }
+
+    #feature-comparision {
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+
+    .sobretxt {
+        display: none;
+    }
+
+    #planes-mvl {
+        display: none;
+    }
+
+    #planes-200px {
+        display: flex;
+    }
+
+    .plan{
+        padding: 1rem 0rem;
+    }
+
+    .type {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width:487px) {
+    .plan{
+        width: 20%;
+    }
+
+    .check{
+        width: 20%;
+    }
+
+    #planes-200px {
+        gap: 0%;
+    }
+
+    .center{
+        height: 1.56rem; 
+    }
+}
+
+@media screen and (max-width:808px) {
+    .nuevo {
+        display: none;
+    }
+}
+
+@media screen and (max-width:948px) {
+    .cost {
+        font-size: 1.2rem;
+    }
+
+    .sp {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:487xp) {
+    .apart {
+        font-size: 1.7rem;
+    }
+
+    .plan{
+        padding: 1.0rem 0rem;
+    }
+
+    .nums{
+        font-size: 1.2rem;
+    }
+}

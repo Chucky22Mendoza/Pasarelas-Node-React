@@ -1,7 +1,8 @@
 const CONFIG = {
-    NEGOCIO_URL: "https://www.yimi.com.mx/negocio",
-    BACKOFFICE_URL: "https://www.yimi.com.mx/reportes",
-    PDV_URL: "https://yimiglobal.com/"
+    NEGOCIO_URL: "https://web.yimiglobal.com/negocio",
+    BACKOFFICE_URL: "https://web.yimiglobal.com/reportes",
+    PDV_URL: "https://pos.yimiglobal.com/", 
+    YIMIMOBILITY_URL: "https://yimimobility.com"
 }
 
 export default CONFIG;

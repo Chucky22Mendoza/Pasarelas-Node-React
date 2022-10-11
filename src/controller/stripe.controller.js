@@ -53,8 +53,9 @@ const createCheckoutSession = async (req, res) => {
             line_items: [{price: id, quantity: 1}],
             mode: 'subscription',
             metadata: metadata,
+            customer_email: mail,
             success_url: success_url,
-            cancel_url: `${process.env.HOST}:${process.env.PORT}/?bussinessId=${id_negocio}&page=${back_page}&mail=${mail}&msg=error`,
+            cancel_url: `${process.env.HTTPS_HOST}/?bussinessId=${id_negocio}&page=${back_page}&mail=${mail}&msg=error`,
         });
 
         res.status(200).json({'redirect': session.url});

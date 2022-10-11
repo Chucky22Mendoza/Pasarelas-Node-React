@@ -653,9 +653,9 @@ form {
 
 .passwordToggler {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 150%);
     width: 2.5rem;
     height: 2.5rem;
     cursor: pointer;

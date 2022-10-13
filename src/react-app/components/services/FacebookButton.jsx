@@ -6,6 +6,7 @@ import { emailNotFound } from '../../utils/login';
 import { useNavigate } from "react-router-dom";
 
 const FacebookButton = (props) => {
+    console.log(props.urlBack);
     const navigate = useNavigate();
 
     const handleResponse = async (res) => {

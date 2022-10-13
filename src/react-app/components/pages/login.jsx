@@ -6,8 +6,7 @@ import getQueryParams from '../../utils/urlParams';
 import paramsExpected from '../../utils/paramsExpected.js';
 import { useNavigate } from "react-router-dom";
 import Checkout from './checkout';
-import GoogleButton from '../services/GoogleButton';
-import FacebookButton from '../services/FacebookButton';
+import SocialMediaButtons from '../services/SocialMediaButtons';
 
 const login = () => {
     const queryParams = getQueryParams(window.location.search);
@@ -189,17 +188,7 @@ const login = () => {
                             </div>
                             <div className="login-alt-options d-flex ai-center fd-column">
                                 <p>O ingresa con</p>
-                                <div className="login-opciones">
-                                    {/* <form>
-                                        <button type="submit">
-                                            <img src="/img/login/login-facebook-icon.svg" alt="Facebook"/>
-                                            <p>Facebook</p>
-                                        </button>
-                                    </form> */}
-                                    <FacebookButton urlBack={queryParams.urlBack} />
-                                    <div></div>
-                                    <GoogleButton urlBack={queryParams.urlBack} />
-                                </div>
+                                <SocialMediaButtons urlBack={queryParams.urlBack} />
                             </div>
                         </div>
                     </div>

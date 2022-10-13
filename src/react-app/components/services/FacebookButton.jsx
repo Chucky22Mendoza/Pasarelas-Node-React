@@ -1,6 +1,5 @@
 import React from 'react';
 import env from '../../config/enviroment'
-import FacebookLoginStyling from 'react-facebook-login/dist/facebook-login-render-props';
 import FacebookLogin from 'react-facebook-login';
 import axios from 'axios';
 import { emailNotFound } from '../../utils/login';
@@ -8,10 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 const FacebookButton = (props) => {
     const navigate = useNavigate();
-
-    const handleError = (error) => {
-        console.log(error);
-    }
 
     const handleResponse = async (res) => {
         const userData = await axios.post(`${env.YIMIMOBILITY_URL}/restaurant/bussinessCheck2`, {
@@ -54,7 +49,7 @@ const FacebookButton = (props) => {
     return (
         <form>
             <FacebookLogin
-                appId={env.FACEBOOK_APP_ID_TEST}
+                appId={env.FACEBOOK_APP_ID}
                 autoLoad={false}
                 callback={handleResponse}
                 fields="email"

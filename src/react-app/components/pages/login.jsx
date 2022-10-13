@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import {closeLoginPassword, expReg, emailNotFound, emailFound, passwordIncorrect} from '../../utils/login';
 import axios from 'axios';
-import config from '../../config/enviroment';
+import env from '../../config/enviroment';
 import getQueryParams from '../../utils/urlParams';
 import paramsExpected from '../../utils/paramsExpected.js';
 import { useNavigate } from "react-router-dom";
 import Checkout from './checkout';
+import GoogleButton from '../services/GoogleButton';
+import FacebookButton from '../services/FacebookButton';
 
 const login = () => {
     const queryParams = getQueryParams(window.location.search);
@@ -55,7 +57,7 @@ const login = () => {
             return;
         }
 
-        await axios.post(`${config.YIMIMOBILITY_URL}/restaurant/bussinessCheck`, {
+        await axios.post(`${env.YIMIMOBILITY_URL}/restaurant/bussinessCheck`, {
             email: inputs.email
         }).then(async (res) => {
             res = res.data;
@@ -64,10 +66,14 @@ const login = () => {
                 return;
             }
 
-            await axios.post(`${config.YIMIMOBILITY_URL}/restaurant/bussinessCheck2`, {
+            await axios.post(`${env.YIMIMOBILITY_URL}/restaurant/bussinessCheck2`, {
                 email: inputs.email
             }).then((res) => {
                 res = res.data;
+                if (res.codigo == "002") {
+                    emailNotFound(res.respuesta);
+                    return;
+                }
                 if (res.datos.length > 0) {
                     emailFound(inputs.email);
                     return;
@@ -95,7 +101,7 @@ const login = () => {
             return;
         }
 
-        const userData = await axios.post(`${config.YIMIMOBILITY_URL}/restaurant/LoginAnalitica`, {
+        const userData = await axios.post(`${env.YIMIMOBILITY_URL}/restaurant/LoginAnalitica`, {
             email: inputs.email,
             pass: inputs.password
         }).then(res => {
@@ -181,25 +187,20 @@ const login = () => {
                             <div className="blue-button" onClick={checkEmailHandler}>
                                 <p>Continuar</p>
                             </div>
-                            {/* <div className="login-alt-options d-flex ai-center fd-column">
+                            <div className="login-alt-options d-flex ai-center fd-column">
                                 <p>O ingresa con</p>
                                 <div className="login-opciones">
-                                    <form action="{{ route('redirect.facebook') }}" method="GET">
-                                        @csrf
+                                    {/* <form>
                                         <button type="submit">
-                                            <img src="{{ asset('img/svg/login-facebook-icon.svg') }}" alt="Facebook"/>
+                                            <img src="/img/login/login-facebook-icon.svg" alt="Facebook"/>
                                             <p>Facebook</p>
                                         </button>
-                                    </form>
+                                    </form> */}
+                                    <FacebookButton urlBack={queryParams.urlBack} />
                                     <div></div>
-                                    <form action="{{ route('redirect.google') }}" method="GET">
-                                        <button type="submit">
-                                            <img src="{{ asset('img/svg/login-google-icon.svg') }}" alt="Google"/>
-                                            <p>Google</p>
-                                        </button>
-                                    </form>
+                                    <GoogleButton urlBack={queryParams.urlBack} />
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>

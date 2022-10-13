@@ -16,9 +16,13 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "gapi-script": "^1.2.0",
     "morgan": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-facebook": "^9.0.8",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.2.2",
     "react-router-dom": "^6.4.1",
     "stripe": "^10.10.0"
   },

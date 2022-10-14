@@ -258,3 +258,29 @@
     text-align: center;
     color: var(--y-scales-gray-70);
 }
+
+@media (max-width: 1050px) {
+    .price {
+        width: calc(100% - 8rem);
+        max-width: 50rem;
+    }
+    .prices {
+        align-items: center;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    #selectorsContent {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    #selectorsContent .selector-plan {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 500px) {
+    .banner .cards {
+        flex-direction: column;
+    }
+}

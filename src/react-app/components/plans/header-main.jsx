@@ -4,7 +4,7 @@ import SelectorCountry from './selector-country';
 
 const headerMain = () => {
     return (
-        <section className="d-flex fd-row jc-space-between">
+        <section id="selectorsContent" className="d-flex fd-row jc-space-between">
             <SelectorType />
             <SelectorCountry />
         </section>

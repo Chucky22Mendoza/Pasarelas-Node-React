@@ -1,6 +1,6 @@
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST);
-const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET_TEST;
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const axios = require('axios');
 
 if (!process.env.STRIPE_SECRET_KEY_TEST || !process.env.STRIPE_PUBLISHABLE_KEY_TEST) {

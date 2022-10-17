@@ -55,7 +55,7 @@ const createCheckoutSession = async (req, res) => {
             metadata: metadata,
             customer_email: mail,
             success_url: success_url,
-            cancel_url: `${process.env.HTTPS_HOST}/?bussinessId=${id_negocio}&page=${back_page}&mail=${mail}&msg=error`,
+            cancel_url: `${process.env.HTTPS_HOST}/subscription/${id_negocio}/${mail}/${back_page}`,
         });
 
         res.status(200).json({'redirect': session.url});
@@ -92,13 +92,20 @@ const webhook = async (req, res) => {
         return;
     }
 
-    // Handle the event
-    const data = event.data.object;
-    console.log(`NEW EVENT TYPE -> ${event.type}`);
-    console.log("event -> ", event);
     //ONLY EVENTS OF CHECKOUT HAS METADATA PASSED BY SESSION CHECKOUT FOR SUBSCRIPTION
+    const data = event.data.object;
     switch (event.type) {
+        case 'checkout.session.async_payment_failed':
+            console.log("checkout.session.async_payment_failed");
+            // Then define and call a function to handle the event checkout.session.async_payment_failed
+            break;
+        case 'checkout.session.async_payment_succeeded':
+            console.log("checkout.session.async_payment_succeeded");
+            // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+            break;
         case 'checkout.session.completed':
+            console.log("checkout.session.completed");
+            // Then define and call a function to handle the event checkout.session.completed
             let dataLicense = {
                 fk_id_usuario: data.metadata.id_negocio,
                 fk_id_licencia: data.metadata.id_licencia,
@@ -109,11 +116,17 @@ const webhook = async (req, res) => {
             console.log('data to send for create license', dataLicense);
             await axios.post(`${process.env.LICENSE_URL}/createLicenceAndroidApple`, dataLicense);
             break;
-        // ... handle other event types
+        case 'checkout.session.expired':
+            console.log("checkout.session.expired");
+            // Then define and call a function to handle the event checkout.session.expired
+            break;
+            // ... handle other event types
         default:
-            console.log(`Unhandled event type ${event.type}`);
+            console.log(`Unhandled event type -> ${event.type}`);
+            return res.status(200).json({ received: true });
     }
-    res.status(200).json({ received: true });
+
+    return res.status(200).json({ received: true });
 }
 
 /**

@@ -3,7 +3,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET_TEST;
 const axios = require('axios');
 
-if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_PUBLISHABLE_KEY_TEST) {
+if (!process.env.STRIPE_SECRET_KEY_TEST || !process.env.STRIPE_PUBLISHABLE_KEY_TEST) {
     console.log('The .env file is not configured. Follow the instructions in the readme to configure the .env file. https://github.com/stripe-samples/subscription-use-cases');
     console.log('');
     process.env.STRIPE_SECRET_KEY_TEST ? '' : console.log('Add STRIPE_SECRET_KEY to your .env file.');
@@ -94,6 +94,8 @@ const webhook = async (req, res) => {
 
     //ONLY EVENTS OF CHECKOUT HAS METADATA PASSED BY SESSION CHECKOUT FOR SUBSCRIPTION
     const data = event.data.object;
+    console.log(`NEW EVENT TYPE -> ${event.type}`);
+    console.log("event -> ", event);
     switch (event.type) {
         case 'checkout.session.async_payment_failed':
             console.log("checkout.session.async_payment_failed");
@@ -123,10 +125,11 @@ const webhook = async (req, res) => {
             // ... handle other event types
         default:
             console.log(`Unhandled event type -> ${event.type}`);
-            return res.status(200).json({ received: true });
+            res.status(200).json({ received: true });
+            return;
     }
 
-    return res.status(200).json({ received: true });
+    res.status(200).json({ received: true });
 }
 
 /**

@@ -22,7 +22,6 @@ app.use(morgan("dev"));
 app.use(cors());
 
 app.use((req, res, next) => {
-    logger.info("Consume -> " + req.originalUrl);
     if (req.originalUrl === '/webhook') {
         next();
     } else {

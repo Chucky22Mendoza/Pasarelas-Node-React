@@ -1,13 +1,13 @@
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const axios = require('axios');
 
-if (!process.env.STRIPE_SECRET_KEY_TEST || !process.env.STRIPE_PUBLISHABLE_KEY_TEST) {
+if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_PUBLISHABLE_KEY) {
     console.log('The .env file is not configured. Follow the instructions in the readme to configure the .env file. https://github.com/stripe-samples/subscription-use-cases');
     console.log('');
-    process.env.STRIPE_SECRET_KEY_TEST ? '' : console.log('Add STRIPE_SECRET_KEY to your .env file.');
-    process.env.STRIPE_PUBLISHABLE_KEY_TEST ? '': console.log('Add STRIPE_PUBLISHABLE_KEY to your .env file.');
+    process.env.STRIPE_SECRET_KEY ? '' : console.log('Add STRIPE_SECRET_KEY to your .env file.');
+    process.env.STRIPE_PUBLISHABLE_KEY ? '': console.log('Add STRIPE_PUBLISHABLE_KEY to your .env file.');
     process.env.STATIC_DIR ? '' : console.log('Add STATIC_DIR to your .env file. Check .env.example in the root folder for an example');
     process.exit();
 }
@@ -26,7 +26,7 @@ if (!process.env.STRIPE_SECRET_KEY_TEST || !process.env.STRIPE_PUBLISHABLE_KEY_T
  * @link https://loginlock-portfolio.js.org/
  */
 const config = async (req, res) => {
-    return res.json({ publishableKey: process.env.STRIPE_PUBLISHABLE_KEY_TEST });
+    return res.json({ publishableKey: process.env.STRIPE_PUBLISHABLE_KEY });
 }
 
 /**

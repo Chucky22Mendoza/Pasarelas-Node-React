@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const path = require('path');
+const createError = require("http-errors");
 
 //webpack
 const webpack = require('webpack');
@@ -21,6 +22,7 @@ app.use(morgan("dev"));
 app.use(cors());
 
 app.use((req, res, next) => {
+    logger.info("Consume -> " + req.originalUrl);
     if (req.originalUrl === '/webhook') {
         next();
     } else {
@@ -39,6 +41,11 @@ app.get("/", (req, res) => {
 });
 app.get("/subscription/:bussinessId/:mail/:page", (req, res) => {
     res.redirect("/");
+});
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    next(createError(404));
 });
 
 // settings

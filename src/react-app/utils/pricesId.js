@@ -12,4 +12,4 @@ const prices_test = {
     "premium-anual": "price_1LmlR0Dwc7vlTQP1sQImPdi2",
 };
 
-export default prices_test;
+export default prices;
